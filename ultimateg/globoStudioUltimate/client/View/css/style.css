@@ -69,7 +69,7 @@ a {
 
 
 
-@media screen and (max-width: 550px) {
+@media screen and (min-width: 0px) {
     .abrirMenu,
     .cerrar {
         display: block;
@@ -282,97 +282,8 @@ a {
     margin: 0 3rem;
 }
 
-.social {
-    display: flex;
-    position:fixed;
-    right:25px;
-    top: 87%;
-    list-style: none;
-    padding-top: 40px;
-    font-family: "Poppins", sans-serif;
-    justify-content: center;
-}
-
-.social .icon {
-    position: relative;
-    background: #fff;
-    border-radius: 50%;
-    margin: 10px;
-    width: 50px;
-    height: 50px;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.social .tooltip {
-    position: absolute;
-    top: 0;
-    font-size: 14px;
-    background: #fff;
-    color: #fff;
-    padding: 5px 8px;
-    border-radius: 5px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.social .tooltip::before {
-    position: absolute;
-    content: "";
-    height: 8px;
-    width: 8px;
-    background: #fff;
-    bottom: -3px;
-    left: 50%;
-    transform: translate(-50%) rotate(45deg);
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.social .icon:hover .tooltip {
-    top: -45px;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-.social  .icon:hover span,
-.social  .icon:hover .tooltip {
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-}
-
-.social  .whatsapp:hover,
-.social  .whatsapp:hover .tooltip,
-.social  .whatsapp:hover .tooltip::before {
-    background: rgb(38,159,195);
-    background: linear-gradient(0deg, rgba(38,159,19,1) 0%, rgba(45,253,139,1) 100%);
-    color: #fff;
-}
-
-.social  .instagram:hover,
-.social  .instagram:hover .tooltip,
-.social  .instagram:hover .tooltip::before {
-    background: rgb(131,58,180);
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-    color: #fff;
-}
-
-.social .whatsapp svg {
-    fill: #25D366; /* Color verde de WhatsApp */
-}
-.social .instagram svg {
-    fill: #E4405F; /* Color característico de Instagram */
-}
-
 .section {
-    background-image: url(../img/globos\ verdes.PNG);
+    background-image: url(/ultimateg/globoStudioUltimate/client/View/img/globos\ verdes.PNG);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -381,7 +292,7 @@ a {
 }
 
 .section2 {
-    background-image: url(../img/Leonardo_Phoenix_A_serene_and_whimsical_wallpaper_featuring_a_1.jpg);
+    background-image: url(/ultimateg/globoStudioUltimate/client/View/img/Leonardo_Phoenix_A_serene_and_whimsical_wallpaper_featuring_a_1.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -394,7 +305,7 @@ a {
 }
 
 .sectionGallery {
-    background-image: url(/globoStudioUltimate/client/View/img/Leonardo_Phoenix_A_serene_and_whimsical_wallpaper_featuring_a_1.jpg);
+    background-image: url(/ultimateg/globoStudioUltimate/client/View/img/Leonardo_Phoenix_A_serene_and_whimsical_wallpaper_featuring_a_1.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -423,7 +334,7 @@ a {
 }
 
 .section3 {
-    background-image: url(/globoStudioUltimate/client/View/img/Leonardo_Phoenix_A_serene_and_whimsical_wallpaper_featuring_a_1.jpg);
+    background-image: url(/ultimateg/globoStudioUltimate/client/View/img/Leonardo_Phoenix_A_serene_and_whimsical_wallpaper_featuring_a_1.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -492,10 +403,13 @@ a {
     object-fit: cover;
     border-radius: 20px;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: 0.3s ease-in;
+    filter: grayscale(100%);
 }
 .cajas1 img:hover {
     transform: rotate(-5deg) scale(1.1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    filter: grayscale(0%);
 }
 img {
     max-width: 100%;
@@ -671,7 +585,7 @@ form {
 @media (min-width: 600px) {
 
     .section {
-        background-image: url(/globoStudioUltimate/client/View/img/afondo.jpg);
+        background-image: url(/ultimateg/globoStudioUltimate/client/View/img/afondo.jpg);
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
@@ -1490,3 +1404,43 @@ h3 {
         font-size: 14px; /* Ajustar tamaño de fuente */
     }
 }
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    display: none;  /* Por defecto oculto */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.footer.show {
+    display: block;  /* Mostrar */
+    opacity: 1;      /* Hacer visible */
+}
+
+.footer-content p {
+    margin: 0;                      /* Eliminar márgenes */
+    font-size: 14px;                 /* Tamaño de fuente pequeño */
+}
+
+/* Contenedor de iconos de redes sociales */
+.social-icons {
+    margin-top: 10px;               /* Espaciado entre el texto y los iconos */
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-icon {
+    margin: 0 15px;                 /* Espaciado horizontal entre los iconos */
+    display: inline-block;          /* Alinear los iconos en línea */
+}
+
+.social-icon svg {
+    width: 30px;                    /* Tamaño de los iconos */
+    height: 30px;
+}
+
