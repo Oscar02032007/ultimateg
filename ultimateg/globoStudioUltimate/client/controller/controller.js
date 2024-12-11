@@ -94,3 +94,36 @@ function mostrarSettings() {
 function mostrarMyQuotes() {
     vista.mostrarPlantilla("myquotes", "contenidoTemptlate")
 }
+
+window.addEventListener("scroll", function() {
+    var footer = document.querySelector('.footer');
+    
+    // Verificar si se ha llegado al final de la página
+    if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+        footer.classList.add('show');  // Mostrar el footer
+    } else {
+        footer.classList.remove('show');  // Ocultar el footer cuando no se está al final
+    }
+});
+
+let isScrolling = false;  // Para controlar que no se ejecute de manera continua
+
+window.addEventListener("scroll", function() {
+    if (isScrolling) return;  // Si ya se está ejecutando, no hacer nada más
+
+    isScrolling = true;  // Indicamos que ya estamos procesando el scroll
+
+    var footer = document.querySelector('.footer');
+    
+    // Verificar si se ha llegado al final de la página
+    if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+        footer.classList.add('show');  // Mostrar el footer
+    } else {
+        footer.classList.remove('show');  // Ocultar el footer cuando no se está al final
+    }
+
+    // Reiniciar el estado de "isScrolling" después de un pequeño retraso
+    setTimeout(() => {
+        isScrolling = false;
+    }, 200); // Ajusta el tiempo (en milisegundos) según lo necesites
+});
